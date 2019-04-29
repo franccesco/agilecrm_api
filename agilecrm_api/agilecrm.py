@@ -1,10 +1,12 @@
 import json
 import requests
 from os import getenv
+from pathlib import Path
 from dotenv import load_dotenv, find_dotenv
 
 # Loading environment variables
-load_dotenv(find_dotenv())
+env_path = Path('.') / '.env'
+load_dotenv(dotenv_path=env_path)
 
 API_KEY = getenv('API_KEY')
 EMAIL = getenv('EMAIL')
@@ -39,7 +41,3 @@ def agileCRM(path, http_method, data, content_type):
         return response.text
 
     raise ValueError(f'Wrong HTTP Method: {http_method}')
-
-
-def show_credentials():
-    print(API_KEY, EMAIL, DOMAIN)
