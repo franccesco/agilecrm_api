@@ -11,7 +11,7 @@ load_dotenv(dotenv_path=env_path)
 API_KEY = getenv('API_KEY')
 EMAIL = getenv('EMAIL')
 DOMAIN = getenv('DOMAIN')
-API_URL = f'https://" + {DOMAIN} + ".agilecrm.com/dev/api/'
+API_URL = f'https://{DOMAIN}.agilecrm.com/dev/api/'
 
 
 def agileCRM(path, http_method, data, content_type):
